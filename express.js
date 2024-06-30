@@ -51,7 +51,7 @@ app.patch('/users/:id', async (req, res) => {
 app.delete('/users/:id', async (req, res) => {
     try{
         const id = req.params.id;
-        const user = await UserModel.findOneAndDe(id);
+        const user = await UserModel.findOneAndDelete(id);
         res.status(200).json(user);
     }
     catch(error){
